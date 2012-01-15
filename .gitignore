@@ -1,0 +1,5 @@
+target/
+Thumbs.db
+.settings/
+.project
+.classpath

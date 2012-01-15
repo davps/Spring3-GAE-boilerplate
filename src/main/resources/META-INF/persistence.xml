@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+<persistence-unit name="transactions-optional">
+        <provider>org.datanucleus.store.appengine.jpa.DatastorePersistenceProvider</provider>
+        <properties>
+            <property name="datanucleus.NontransactionalRead" value="false"/>
+            <property name="datanucleus.NontransactionalWrite" value="false"/>
+            <property name="datanucleus.autoCreateSchema" value="false"/>
+            <property name="datanucleus.ConnectionURL" value="appengine"/>
+            <property name="datanucleus.ConnectionUserName" value=""/>
+            <property name="datanucleus.ConnectionPassword" value=""/>
+            <property name="datanucleus.autoCreateTables" value="false"/>
+            <property name="datanucleus.autoCreateColumns" value="false"/>
+            <property name="datanucleus.autoCreateConstraints" value="false"/>
+            <property name="datanucleus.validateTables" value="false"/>
+            <property name="datanucleus.validateConstraints" value="false"/>
+            <property name="datanucleus.jpa.addClassTransformer" value="false"/>
+        </properties>
+    </persistence-unit>
+</persistence>

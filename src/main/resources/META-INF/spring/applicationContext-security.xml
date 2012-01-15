@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/security 
+		http://www.springframework.org/schema/security/spring-security-3.0.4.xsd">
+
+	<http auto-config="true" >
+		<intercept-url pattern="/diaryreport*" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+		<intercept-url pattern="/**" access="ROLE_USER"/>
+		<remember-me/>
+	</http>
+	
+	<authentication-manager>
+		<authentication-provider user-service-ref="customUserDetailsService"/>
+	</authentication-manager>
+
+	<global-method-security secured-annotations="enabled"/>
+	
+</beans:beans>
+
