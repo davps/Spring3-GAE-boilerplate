@@ -21,15 +21,15 @@ import com.namespace.repository.UserGaeDAO;
 import com.namespace.repository.TestBase;
 import com.namespace.repository.mock.AccountDAOMock;
 import com.namespace.repository.mock.UserGaeDAOMock;
-import com.namespace.service.IUserAdministrationManager;
 import com.namespace.service.UserAdministrationManager;
+import com.namespace.service.UserAdministrationManagerImpl;
 
 public class UserAdministrationManagerTest extends TestBase {
 
 	@SuppressWarnings("unused")
 	private static final Logger logger = LoggerFactory.getLogger(UserAdministrationManagerTest.class);
 
-	private IUserAdministrationManager manager;
+	private UserAdministrationManager manager;
 	
 	private UserGaeDAO userGaeDAO;
 	private AccountDAO accountDAO; 
@@ -45,7 +45,7 @@ public class UserAdministrationManagerTest extends TestBase {
 		this.userGaeDAO = new UserGaeDAOMock(super.objectifyFactory);
 		this.accountDAO = new AccountDAOMock(super.objectifyFactory);
 		
-		this.manager = new UserAdministrationManager(this.userGaeDAO, 
+		this.manager = new UserAdministrationManagerImpl(this.userGaeDAO, 
 													 this.accountDAO 
 													 );
 		}

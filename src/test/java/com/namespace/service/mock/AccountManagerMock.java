@@ -10,11 +10,11 @@ import com.googlecode.objectify.Key;
 import com.namespace.domain.Account;
 import com.namespace.domain.UserGAE;
 import com.namespace.repository.TestBase;
-import com.namespace.service.IAccountManager;
-import com.namespace.service.IEnabledUserManager;
+import com.namespace.service.AccountManager;
+import com.namespace.service.CurrentUserManager;
 import com.namespace.util.SecurityUtil;
 
-public class AccountManagerMock extends TestBase implements IAccountManager, IEnabledUserManager{
+public class AccountManagerMock extends TestBase implements AccountManager, CurrentUserManager{
 
 	private List<Account> accounts = new ArrayList<Account>();
 	private List<UserGAE> users = new ArrayList<UserGAE>();

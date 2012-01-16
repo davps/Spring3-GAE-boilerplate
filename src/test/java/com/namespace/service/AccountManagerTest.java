@@ -18,15 +18,15 @@ import com.namespace.repository.UserGaeDAO;
 import com.namespace.repository.TestBase;
 import com.namespace.repository.mock.AccountDAOMock;
 import com.namespace.repository.mock.UserGaeDAOMock;
+import com.namespace.service.AccountManagerImpl;
 import com.namespace.service.AccountManager;
-import com.namespace.service.IAccountManager;
 
 public class AccountManagerTest extends TestBase{
 
 	@SuppressWarnings("unused")
 	private static final Logger logger = LoggerFactory.getLogger(AccountManagerTest.class);
 
-	private IAccountManager manager;
+	private AccountManager manager;
 	
 	private UserGaeDAO userGaeDAO;
 	private AccountDAO accountDAO;
@@ -38,7 +38,7 @@ public class AccountManagerTest extends TestBase{
 		this.userGaeDAO = new UserGaeDAOMock(super.objectifyFactory);
 		this.accountDAO = new AccountDAOMock(super.objectifyFactory);
 
-		this.manager = new AccountManager(userGaeDAO, accountDAO);
+		this.manager = new AccountManagerImpl(userGaeDAO, accountDAO);
 	}
 	
 	@Test

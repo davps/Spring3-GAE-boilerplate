@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.namespace.domain.Account;
-import com.namespace.service.IAccountManager;
+import com.namespace.service.AccountManager;
 import com.namespace.service.dto.AccountDetailsForm;
 import com.namespace.service.dto.AccountFormAssembler;
 import com.namespace.service.validator.AccountDetailsValidator;
@@ -22,13 +22,13 @@ public class AccountController {
 	private static final Logger logger = LoggerFactory.getLogger(AccountController.class);
 
 	@Autowired private AccountFormAssembler accountFormAssembler;
-	@Autowired private IAccountManager accountManager;
+	@Autowired private AccountManager accountManager;
 	@Autowired private AccountDetailsValidator accountDetailsValidator;
 
 	public AccountController() {
 	}
 
-	public AccountController(IAccountManager accountManager, 
+	public AccountController(AccountManager accountManager, 
 			AccountFormAssembler accountFormAssembler,
 			AccountDetailsValidator accountDetailsValidator) {
 		this.accountManager = accountManager;

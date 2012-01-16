@@ -18,8 +18,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.namespace.domain.Account;
 import com.namespace.domain.UserGAE;
-import com.namespace.service.IAccountManager;
-import com.namespace.service.IUserAdministrationManager;
+import com.namespace.service.AccountManager;
+import com.namespace.service.UserAdministrationManager;
 import com.namespace.service.dto.EnabledUserForm;
 import com.namespace.service.dto.UserAdministrationForm;
 import com.namespace.service.dto.UserAdministrationFormAssembler;
@@ -38,12 +38,12 @@ public class UsersController {
 	@Autowired private UserAdministrationValidator userAdministrationValidator;
 	@Autowired private UserAdministrationDetailsValidator userAdministrationDetailsValidator;
 	@Autowired private UserAdministrationPasswordValidator userAdministrationPasswordValidator;
-	@Autowired private IUserAdministrationManager userAdministrationManager;
-	@Autowired private IAccountManager accountManager;
+	@Autowired private UserAdministrationManager userAdministrationManager;
+	@Autowired private AccountManager accountManager;
 	
 	public UsersController(UserAdministrationFormAssembler userAdministrationFormAssembler,
 			UserAdministrationValidator userAdministrationValidator,
-			IUserAdministrationManager userAdministrationManager) {
+			UserAdministrationManager userAdministrationManager) {
 		this.userAdministrationFormAssembler = userAdministrationFormAssembler;
 		this.userAdministrationValidator = userAdministrationValidator;
 		this.userAdministrationManager = userAdministrationManager;

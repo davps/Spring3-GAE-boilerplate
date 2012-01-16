@@ -1,7 +1,7 @@
 Complete Google App Engine + Spring 3 Web App Example
 ===============================================================================
 
-Based on best practices for application architecture proposed by SpringSource. It's a great boilerplate to start a JEE web apps deployed in the cloud. 
+This repository contains best practices for an JEE (Spring based) application architecture. It's a great boilerplate to start JEE web apps and deploy them in GAE. 
 
 ### Introduction
 
@@ -9,7 +9,7 @@ This sample web app integrate the following technologies, methodologies and tool
 
 * Google App Engine (Java) for its back end
 * Objectify for persistence layer
-* Multi tier architecture organized in following packages 
+* Java Classes organized in the following packages 
 	+ Domain
 	+ Repository (with the DAO pattern)
 	+ Service
@@ -24,23 +24,25 @@ This sample web app integrate the following technologies, methodologies and tool
 * Spring Security (with customized user accounts)
 * Test Driven development (Test units and integration tests)
 
-You can learn a lot just reading reading the source code. 
+You can learn a lot just reading the source code. 
 
 Getting Started
 ---------------
 
-* To run the app at localhost using maven type the following command in your terminal, at the root folder of the project:
-``` bash
+### Running the app
+
+To run the app at localhost using maven type the following command in your terminal, at the root folder of the project:
+``` 
 mvn gae:run
 ```
 And launch your web browser to `http://localhost:8000/` and sign in with a default user:
 
-``` bash
+``` 
 User: admin
 Password: admin
 ```
 
-``` bash
+``` 
 User: user
 Password: user
 ```
@@ -48,25 +50,28 @@ Password: user
 Each user has a different role (for authentication and authorization purposes).
 
 
-* To deploy the app on GAE change fill the following tag src/main/webapp/WEB-INF/appengine-web and change with your application name:
-``` bash
+### Deploying the app
+
+To deploy the app on GAE change fill the following tag src/main/webapp/WEB-INF/appengine-web and change with your application name:
+``` 
 <application>example</application>
 ```
 and type the following maven command in your terminal, at the root folder:
-``` bash
+``` 
 mvn gae:deploy
 ```
 
+### Using Eclipse
 
-* If you use Eclipse, type the following command-line mvn command to create your .classpath file: 
-``` bash
+If you use Eclipse, type the following command-line mvn command to create your .classpath file: 
+``` 
 mvn eclipse:eclipse
 ```
 
 That's all.
 
-### Default structure
-``` bash
+### Default file system structure
+``` 
 +---src
    +---main
    ¦   +---java
