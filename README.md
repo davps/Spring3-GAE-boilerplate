@@ -23,6 +23,7 @@ This sample web app integrate the following technologies, methodologies and tool
 * Twitter Bootstrap
 * Spring Security (with customized user accounts)
 * Test Driven development (Test units and integration tests)
+* Maven
 
 You can learn a lot just reading the source code. 
 
