@@ -7,13 +7,18 @@
 
 	<http auto-config="true" use-expressions="true">
 		<intercept-url pattern="/diaryreport*" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
-        <intercept-url pattern="/**" access="permitAll" />  
+		<intercept-url pattern="/newUser*" access="isAuthenticated()"/>		
+		<intercept-url pattern="/**" access="permitAll" /> 
 		<remember-me/>
+        <http-basic/> 		
 	</http>
-	
-	<authentication-manager>
-		<authentication-provider user-service-ref="customUserDetailsService"/>
-	</authentication-manager>
+
+    <!-- Configure Authentication mechanism -->
+    <authentication-manager alias="authenticationManager">
+        <!-- SHA-256 values can be produced using 'echo -n your_desired_password | sha256sum' (using normal *nix environments) -->
+		<authentication-provider user-service-ref="customUserDetailsService">
+		</authentication-provider>
+    </authentication-manager>	
 
 	<global-method-security secured-annotations="enabled"/>
 	

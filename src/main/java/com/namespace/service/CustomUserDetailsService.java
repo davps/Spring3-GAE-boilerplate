@@ -1,5 +1,7 @@
 package com.namespace.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -12,12 +14,15 @@ import com.namespace.domain.Account;
 import com.namespace.domain.UserGAE;
 import com.namespace.repository.AccountDAO;
 import com.namespace.repository.UserGaeDAO;
+import com.namespace.web.HomeController;
 
 @Service(value="customUserDetailsService")
 public class CustomUserDetailsService implements UserDetailsService {
 	
 	@Autowired private UserGaeDAO userGaeDAO;
 	@Autowired private AccountDAO accountDAO;
+	
+	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);	
 	
 	
 	public CustomUserDetailsService() {
@@ -33,11 +38,14 @@ public class CustomUserDetailsService implements UserDetailsService {
 		
 		UserGAE user = this.userGaeDAO.findByUsername(username);
 		if(!this.userGaeDAO.findAll().isEmpty()){
+			logger.info("Users Services already has data!!....");
 			return user;
 		}else{
 			/*
 			 * Create a default user if the datastore is empty
 			 */
+			
+			logger.info("Users Service datastore is empty...");
 			
 			UserGAE firstAdminUser = new UserGAE("admin", "admin", true, true, false, true);
 			UserGAE firstNonAdminUser = new UserGAE("user", "user", false, true, false, true);
