@@ -38,6 +38,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 			/*
 			 * Create a default user if the datastore is empty
 			 */
+			
 			UserGAE firstAdminUser = new UserGAE("admin", "admin", true, true, false, true);
 			UserGAE firstNonAdminUser = new UserGAE("user", "user", false, true, false, true);
 			Key<UserGAE> userAdminKey = new Key<UserGAE>(UserGAE.class, firstAdminUser.getUsername());
