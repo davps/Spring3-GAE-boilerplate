@@ -6,58 +6,12 @@
 
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Vestibulum id ligula porta felis euismod semper.</title>
-
-	<%-- JQuery --%>
-	<spring:url value="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" 
-			var="jquery_js_url"/>
-	<script type="text/javascript" src="${jquery_js_url}" ></script>
-			
-	<%-- Twitter bootstrap --%>
-	<spring:url value="http://twitter.github.com/bootstrap/1.4.0/bootstrap-dropdown.js" 
-			var="bootstrap_js_dropdown"/>
-	<spring:url value="http://twitter.github.com/bootstrap/1.4.0/bootstrap-alerts.js" 
-			var="bootstrap_js_alerts"/>
-	<spring:url value="http://twitter.github.com/bootstrap/1.4.0/bootstrap-modal.js" 
-			var="bootstrap_js_modal"/>
-	<spring:url value="/js/jquery/jquery.tablesorter.min.js" 
-			var="jquery_js_tablesorter"/>
-	<script type="text/javascript" src="${bootstrap_js_dropdown}" ></script>
-	<script type="text/javascript" src="${bootstrap_js_alerts}" ></script>
-	<script type="text/javascript" src="${bootstrap_js_modal}" ></script>
-	<script type="text/javascript" src="${jquery_js_tablesorter}" ></script>
-
-	<script type="text/javascript">
-		$(document).ready(function() {
-
-			//bootstrap js initializations
-			$('#topbar').dropdown();
-			
-			$(".alert-message").alert();
-			$(".alert-message").alert('close');
-			
-			$('#my-modal').modal({
-				keyboard: true,
-			});
-			
-			//adapting spring error messages css styles according to twitter bootstrap css style 
-			$('.help-inline').parent().parent().addClass('error');
-			
-		});
-	</script>
-	<script type="text/javascript">
-		$(function(){
-			$("table#sortTable").tablesorter({ sortList: [[1,0]] });
-		});
-	</script>
-
-	<spring:url value="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css" var="style_css_url" htmlEscape="true"/>
-	<link href="${style_css_url}" rel="stylesheet" type="text/css" />
-
-	<style type="text/css">
-		body {
-			padding-top: 100px;
-		}
-	</style>
+	
+	<spring:url value="../assets/css/bootstrap.css" var="style_css_url" htmlEscape="true"/>
+	<spring:url value="../assets/css/bootstrap-responsive.css" var="styleResponsive_css_url" htmlEscape="true"/>
+	
+    <link href="${style_css_url}" rel="stylesheet">    
+    <link href="${styleResponsive_css_url}" rel="stylesheet">	
 
 	<tiles:insertAttribute name="head" />
 
@@ -65,7 +19,24 @@
 
 <body>
     <tiles:insertAttribute name="header" />
-	<tiles:insertAttribute name="body"/>				 
+	<tiles:insertAttribute name="body"/>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap-transition.js"></script>
+    <script src="../js/bootstrap-alert.js"></script>
+    <script src="../js/bootstrap-modal.js"></script>
+    <script src="../js/bootstrap-dropdown.js"></script>
+    <script src="../js/bootstrap-scrollspy.js"></script>
+    <script src="../js/bootstrap-tab.js"></script>
+    <script src="../js/bootstrap-tooltip.js"></script>
+    <script src="../js/bootstrap-popover.js"></script>
+    <script src="../js/bootstrap-button.js"></script>
+    <script src="../js/bootstrap-collapse.js"></script>
+    <script src="../js/bootstrap-carousel.js"></script>
+    <script src="../js/bootstrap-typeahead.js"></script>					 
 </body>
 
 </html>

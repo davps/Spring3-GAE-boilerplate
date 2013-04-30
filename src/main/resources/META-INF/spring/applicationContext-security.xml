@@ -20,6 +20,7 @@
     <authentication-manager alias="authenticationManager">
         <!-- SHA-256 values can be produced using 'echo -n your_desired_password | sha256sum' (using normal *nix environments) -->
 		<authentication-provider user-service-ref="customUserDetailsService">
+			<password-encoder hash="sha-256"/>
 		</authentication-provider>
     </authentication-manager>	
 

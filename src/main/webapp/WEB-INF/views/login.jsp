@@ -1,41 +1,31 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
     
     <div class="container" style="margin-top: -0px; padding-right: 0px; padding-top: 20px;" >
+    
+    	<c:if test="${not empty error}">
+    	
+    	<div class="alert alert-error">
+    	   <p>Your login attempt was not successful, try again.</p>
+    	    Caused :
+			${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
+		</div>
+			
+		</c:if>
+    
 		<div class="content" style="margin-left: 0px; "  >
-	        <div class="hero-unit">
-	          <h1>Welcome!</h1>
-	          <p>Vestibulum id ligula porta felis euismod semper. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
-	          <p><a class="btn primary large">Sign in &raquo;</a>
-	          
-				<form name='f' action="<c:url value='j_spring_security_check' />"
-					method='POST'>
-			 
-					<table>
-						<tr>
-							<td>User:</td>
-							<td><input type='text' name='j_username' value=''>
-							</td>
-						</tr>
-						<tr>
-							<td>Password:</td>
-							<td><input type='password' name='j_password' />
-							</td>
-						</tr>
-						<tr>
-							<td colspan='2'><input name="submit" type="submit"
-								value="submit" />
-							</td>
-						</tr>
-						<tr>
-							<td colspan='2'><input name="reset" type="reset" />
-							</td>
-						</tr>
-					</table>
-			 
-				</form>	          
-	          
-	        </div>
+				
+		      <form method='POST' class="form-signin" action="<c:url value='j_spring_security_check' />">
+		        <h2 class="form-signin-heading">Please sign in</h2>
+		        <input name='j_username' type="text" class="input-block-level" placeholder="Email address">
+		        <input name='j_password' type="password" class="input-block-level" placeholder="Password">
+		        <label class="checkbox">
+		          <input type="checkbox" value="remember-me"> Remember me
+		        </label>
+		        <button class="btn btn-large btn-primary" type="submit">Sign in</button>
+		      </form>
+      		
 		</div><!-- /content -->
+		
       <footer>
         <p>Vestibulum id ligula porta felis euismod semper.</p>
       </footer>
