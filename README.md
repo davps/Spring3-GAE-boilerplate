@@ -130,5 +130,4 @@ That's all.
 * Improve the test units, uncomment test cases and fix them
 * Fill all the internationalization fields 
 * White the pagination for the user lists
-* Creation of a custom login form
 * Better error handling for the DAO layer (using GAE specific Exceptions)
