@@ -129,5 +129,5 @@ That's all.
 * Better integration of Apache Tiles with Spring Framework
 * Improve the test units, uncomment test cases and fix them
 * Fill all the internationalization fields 
-* White the pagination for the user lists
+* Write the pagination for the user lists
 * Better error handling for the DAO layer (using GAE specific Exceptions)
