@@ -7,4 +7,9 @@
 	    <put-attribute name="head" value="/WEB-INF/views/head.jsp"/>
 	  </definition>
 	  
+	  <definition extends="default" name="login">
+	    <put-attribute name="body" value="/WEB-INF/views/login.jsp"/>
+	    <put-attribute name="head" value="/WEB-INF/views/signinhead.jsp"/>
+	  </definition>	  	  
+	  
 </tiles-definitions>
